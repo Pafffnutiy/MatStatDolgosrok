@@ -2,16 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import pareto
 from HW2.paretoData import paretoData
-
-
-def ecdf(realization, x):
-    cnt = 0
-    for elem in realization:
-        if elem <= x:
-            cnt += 1
-
-    return cnt / len(realization)
-
+from BaseFuncs import ecdf
 
 def draw_plot():
     colors = ['b', 'g', 'r', 'c',

@@ -32,14 +32,21 @@ def generate_Pareto(cnt, theta):
     return uniformsToParetoByElements(gen_uniforms(cnt), theta)
 
 
-class Model():
+def cdf(x, theta=8):
+    if x >= 1:
+        return 1 - x**(-theta)
+
+    return 0
+
+
+class Model:
     def __init__(self, theta):
         self.data = []
         self.theta = theta
 
 
 def draw_plot():
-    model = Model(11)
+    model = Model(8)
     model.data = generate_Pareto(10000, model.theta)
 
     d = dict()
@@ -58,22 +65,23 @@ def draw_plot():
     d = dict(sorted(d.items(), key=lambda x: x[0]))
 
     print("Real mean = " +
-        str(round(statistics.mean(model.data), 2)) +
-        "\tEstimate mean = " +
-        str(round(model.theta / (model.theta - 1), 2))
-      )
+          str(round(statistics.mean(model.data), 2)) +
+          "\tEstimate mean = " +
+          str(round(model.theta / (model.theta - 1), 2))
+          )
 
     print("Real variance = " +
-        str(round(statistics.variance(model.data), 2))
-        + "\tEstimate variance = " +
-        str(round(model.theta / (
-              (model.theta - 2) * (model.theta - 1) ** 2
-        ), 2))
-      )
+          str(round(statistics.variance(model.data), 2))
+          + "\tEstimate variance = " +
+          str(round(model.theta / (
+                  (model.theta - 2) * (model.theta - 1) ** 2
+          ), 2))
+          )
 
     plt.plot(d.keys(), d.values())
     plt.grid()
     plt.xlim(0.5, 2.2)
     plt.show()
+
 
 draw_plot()

@@ -2,18 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from math import sqrt
 from HW2.binData import binomData
-from HW2.Task2.binomialEmperical import ecdf
-
-
-def supp(s1, s2):
-    x = np.arange(0, 72, 0.5)
-    f1 = list(ecdf(s1, t) for t in x)
-    f2 = list(ecdf(s2, t) for t in x)
-    s = 0
-    for i in range(len(x)):
-        s = max(s, abs(f1[i] - f2[i]))
-
-    return s
+from BaseFuncs import supp
 
 
 def calcD(s1, s2):

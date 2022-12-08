@@ -2,20 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from math import sqrt
 from HW2.paretoData import paretoData
-from HW2.Task2.paretoEmperical import ecdf
-
-
-def supp(s1, s2):
-    # m = max(len(s1), len(s2))
-    # x = np.linspace(0, 1000, num=m)
-    x = np.linspace(0, 1000, num=10000)
-    f1 = list(ecdf(s1, t) for t in x)
-    f2 = list(ecdf(s2, t) for t in x)
-    s = 0
-    for i in range(len(x)):
-        s = max(s, abs(f1[i] - f2[i]))
-
-    return s
+from BaseFuncs import supp
 
 
 def calcD(s1, s2):

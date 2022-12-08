@@ -1,16 +1,7 @@
-import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import binom
 from HW2.binData import binomData
-
-
-def ecdf(realization, x):
-    cnt = 0
-    for elem in realization:
-        if elem <= x:
-            cnt += 1
-
-    return cnt / len(realization)
+from BaseFuncs import ecdf
 
 
 def draw_plot():
