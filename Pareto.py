@@ -82,6 +82,3 @@ def draw_plot():
     plt.grid()
     plt.xlim(0.5, 2.2)
     plt.show()
-
-
-draw_plot()
