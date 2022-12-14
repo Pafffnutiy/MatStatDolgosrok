@@ -25,5 +25,3 @@ def draw_plot():
     plt.legend([*cnts, "real"], loc='upper left')
     plt.title("The fifth realizations with different sizes")
     plt.show()
-
-draw_plot()
