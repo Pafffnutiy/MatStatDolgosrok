@@ -2,7 +2,7 @@ from HW2.binData import binomData
 from HW2.paretoData import paretoData
 import matplotlib.pyplot as plt
 import numpy as np
-from Distributions import Distibutions
+from Distributions import Distributions
 
 
 def calcThetasBin():
@@ -28,17 +28,17 @@ def calcThetasPar():
     return res
 
 
-def calcThetas(arg: Distibutions):
-    if arg == Distibutions.BINOMIAL:
+def calcThetas(arg: Distributions):
+    if arg == Distributions.BINOMIAL:
         return calcThetasBin()
-    elif arg == Distibutions.PARETO:
+    elif arg == Distributions.PARETO:
         return calcThetasPar()
 
 
 def draw_table():
     cnts = [5, 10, 100, 200, 400, 600, 800, 1000]
 
-    data = calcThetas(Distibutions.BINOMIAL)
+    data = calcThetas(Distributions.BINOMIAL)
     rows = ["Sample {0}".format(x) for x in range(5)]
 
     plt.table(rowLabels=rows, colLabels=cnts,

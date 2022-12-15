@@ -12,7 +12,7 @@ def ecdf(realization, x):
 def supp(s1, s2):
     # m = max(len(s1), len(s2))
     # x = np.linspace(0, 1000, num=m)
-    x = np.linspace(0, 1000, num=10000)
+    x = np.linspace(0, 1000, num=100000)
     f1 = list(ecdf(s1, t) for t in x)
     f2 = list(ecdf(s2, t) for t in x)
     s = 0

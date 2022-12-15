@@ -1,6 +1,6 @@
 from enum import Enum
 
 
-class Distibutions(Enum):
+class Distributions(Enum):
     BINOMIAL = 0
     PARETO = 1
